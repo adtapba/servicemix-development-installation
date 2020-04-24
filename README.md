@@ -1,5 +1,4 @@
 # Guía creación instalación ServiceMix para desarrollo de bundles
-***
 ### Objetivo
 Especificar los pasos para crear una instalación de Apache ServiceMix 6.0.0, en la que poder probar bundles de integración desarrollados para la APBA.
 ### Pasos de instalación
