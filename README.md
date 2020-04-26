@@ -72,3 +72,7 @@ feature:install hawtio-core
 ```
 bundle:install -s mvn:es.apba.infra.esb.support/apba-realm/1.0.0
 ```
+7. Se puede parar ServiceMix ejecutando el siguiente comando en la consola Karaf:
+```
+system:shutdown
+```
