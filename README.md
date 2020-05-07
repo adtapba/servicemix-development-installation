@@ -61,9 +61,20 @@ config:property-set org.ops4j.pax.web.ssl.keypassword test1234
 config:update
 ```
 5. Instalar [Hawtio](https://hawt.io)
-* Ejecutar los siguientes comandos en la consola Karaf:
+* Actualizar las fuentes MAVEN usadas por ServiceMix, ejecutando los siguientes comandos en la consola Karaf:
 ```
-feature:repo-add hawtio 1.4.60
+config:edit org.ops4j.pax.url.mvn
+config:property-set org.ops4j.pax.url.mvn.repositories "https://repo1.maven.org/maven2@id=maven.central.repo, \
+    https://repository.springsource.com/maven/bundles/release@id=springsource.release.repo, \
+    https://repository.springsource.com/maven/bundles/external@id=springsource.external.repo, \
+    https://repository.apache.org/content/groups/snapshots-group@snapshots@noreleases@id=apache.snapshots.repo, \
+    https://svn.apache.org/repos/asf/servicemix/m2-repo@id=maven.smx.repo, \
+    https://oss.sonatype.org/content/repositories/releases/@id=maven.sonatype.repo"
+config:update
+```
+* Instalar la feature mediante los siguientes comandos Karaf:
+```
+feature:repo-add hawtio 1.4.68
 feature:install hawtio-core
 ```
 * Una vez hecho esto, se puede acceder a la [consola](https://localhost:8143/hawtio) (el usuario por defecto es smx, con la clave smx).
